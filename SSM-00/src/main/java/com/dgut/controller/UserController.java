@@ -8,8 +8,11 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-//@Controller
-@RestController
+import java.util.List;
+
+
+//@RestController
+@Controller
 @RequestMapping("user")
 public class UserController {
     /*public static void main(String[] args){
@@ -34,14 +37,37 @@ public class UserController {
 //
     }
 
+//    @CrossOrigin
     @PostMapping("/add")
     public void insertUser(User user){
 //        boolean flag = userService.insertUser(user);
         System.out.println("接收到了" + user);
     }
-  /*  @RequestMapping()
+
+
+    @CrossOrigin
+    @GetMapping("/users")
+    public List<User> findAllUser(){
+        List<User> userList = userService.findAllUser();
+        return userList;
+    }
+
+    @RequestMapping("main")
+    public String showUsers(){
+        return "/WEB-INF/pages/main.jsp";
+//        System.out.println("here");
+//        return "/WEB-INF/pages/test.jsp";
+    }
+
+    @RequestMapping("test")
     public String test(){
-        System.out.println("haha");
-        return "index";
-    }*/
+//        return "/WEB-INF/pages/main.jsp";
+//        System.out.println("here");
+        return "/WEB-INF/pages/test.jsp";
+    }
+
+    @RequestMapping("showData")
+    public String showData(){
+        return "/WEB-INF/pages/showData.jsp";
+    }
 }

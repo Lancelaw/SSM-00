@@ -22,6 +22,11 @@
 <!--        <property name="mapperLocations" value="classpath:com.dgut.dao/*.xml"/>-->
     </bean>
 
+    <!--<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+        <property name="prefix" value="/WEB-INF/pages/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>-->
     <!--<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.dgut.dao"></property>
     </bean>-->

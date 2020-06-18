@@ -17,6 +17,10 @@
     select * from user,address where id = #{id}
   </select>
 
+  <select id="findAllUser" resultMap="userMap">
+    select * from user,address
+  </select>
+
   <insert id="insertUser" useGeneratedKeys="true">
     insert into user(name,password,provinceName,cityName) values(#{name},#{password},#{provinceName},#{cityName})
   </insert>
